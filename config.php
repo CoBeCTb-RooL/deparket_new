@@ -8,10 +8,10 @@ if($_SERVER['SERVER_ADDR'] == '127.0.0.1')
 }
 else
 {
-    define('DB_USER', 'dpark_dparketk');
-    define('DB_PASSWORD', 'l3tB9j#4');
-    define('DB_HOST', 'srv-db-plesk04.ps.kz:3306');
-    define('DB_NAME', 'dparketk_maindb1111');
+    define('DB_USER', 'p-745_deparket_u');
+    define('DB_PASSWORD', 'qNd46c#7Dle22*x2');
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'p-7456_depark2');
 }
 
 
