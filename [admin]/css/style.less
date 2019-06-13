@@ -44,12 +44,18 @@ a
 
 
 .table1{display: table; }
-.row{display: table-row; }
-.cell{display: table-cell; }
+.t-row{display: table-row; border: 1px solid red; }
+.t-cell{display: table-cell; }
 
 
 .full-width{width: 100%;}
 .full-height{height: 100%;}
+
+
+
+fieldset{border: 1px solid #cbcbcb; display: inline-block; padding: 10px 30px 30px 30px; border-radius: 10px; vertical-align: top; margin: 0 20px 20px 20px ;
+	legend{display: inline-block; width: auto; padding: 0 15px;  }
+}
 
 
 @menu-height: 44px;
@@ -992,18 +998,16 @@ input, select, textarea, button{
 /***********	НАСТРОЙКИ	**********************/
 .settings
 {
-	.row{
-		margin: 0px 0 10px 0 ; display: block; 
+	.row1{
+		margin: 0px 0 21px 0 ; display: block;
 		
-		.label{display: table-cell; vertical-align: top; min-width: 100px; text-align: right; padding: 0 5px 0 0 ; }
+		.label{display: table-cell; vertical-align: top; min-width: 100px; text-align: right; padding: 0 5px 0 0 ;
+			&.block{display: block; text-align: left;  }
+		}
 		.input{display: table-cell; vertical-align: top;}
 	}
-	.hint{font-size: .82em; color: #B5B5B5; }
-	fieldset
-	{
-		margin: 0 0 20px 0;  padding: 10px;  
-		legend{font-size: 1.6em; }
-	}
+	.hint{font-size: .85em; color: #9ba2ab; font-style: italic;  }
+	
 	textarea{width: 100%; min-width: 350px; min-height: 80px; }
 }
 

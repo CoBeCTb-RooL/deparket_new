@@ -20,6 +20,14 @@ class Settings{
 			return $next;
 		}
 	}
+
+
+	function val($code)
+    {
+        global $_CONFIG;
+
+        return $_CONFIG['SETTINGS'][$code];
+    }
 	
 	
 	
@@ -35,6 +43,18 @@ class Settings{
 			, `title_separator` ='".mysql_real_escape_string($arr['title_separator'])."'
 			, `description` ='".strPrepare($arr['description'])."'
 			, `keywords` ='".strPrepare($arr['keywords'])."'
+			
+			, `robotEmail` ='".strPrepare($arr['robotEmail'])."'
+			
+			, `contactsPhone` ='".strPrepare($arr['contactsPhone'])."'
+			, `contactsEmail` ='".strPrepare($arr['contactsEmail'])."'
+			, `contactsAddress` ='".strPrepare($arr['contactsAddress'])."'
+			, `contactsGoogleMapCode` ='".strPrepare($arr['contactsGoogleMapCode'])."'
+			, `instagram` ='".strPrepare($arr['instagram'])."'
+			, `facebook` ='".strPrepare($arr['facebook'])."'
+			, `vk` ='".strPrepare($arr['vk'])."'
+			
+			
 			
 			
 			";

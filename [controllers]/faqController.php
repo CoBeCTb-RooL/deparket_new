@@ -24,6 +24,8 @@ class FaqController extends MainController{
 //        $CONTENT->isTitleStartsWithPostfix = true;
 		$CONTENT->setTitle('Вопросы-ответы');
 
+        $_GLOBALS['activePageIds'] = [28];
+
 		$info = Page::get(40);
         $MODEL['title'] = $info->attrs['name'];
 

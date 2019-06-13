@@ -155,12 +155,12 @@ if(Admin::isAdmin())
 			<? //Core::renderPartial(SHARED_VIEWS_DIR.'/menu2.php', $tmp = array('menu'=>$GLOBALS['MENU2']));?>
 			<? Core::renderPartial(SHARED_VIEWS_DIR.'/menu3.php', $tmp = array('menu'=>$GLOBALS['MENU2']));?>
 			
-			<!--<div class="row">
-				<div class="cell"><? Core::renderPartial(SHARED_VIEWS_DIR.'/menu.php', $tmp = array('menu'=>$GLOBALS['MENU'], 'class'=>"menu"));?></div>	
+			<!--<div class="t-row">
+				<div class="tblcell"><? Core::renderPartial(SHARED_VIEWS_DIR.'/menu.php', $tmp = array('menu'=>$GLOBALS['MENU'], 'class'=>"menu"));?></div>	
 			</div>-->
 			
-			<div class="row">
-				<div class="cell full-height">
+			<div class="t-row">
+				<div class="t-cell full-height">
 					<? //Core::renderPartial(SHARED_VIEWS_DIR.'/menu.php', $tmp = array('menu'=>$GLOBALS['MENU'], 'class'=>"leftMenu"));?>
 
 					<div class="content" style=" border: 0px solid red; padding: 0; margin: 10px;  " >
@@ -170,8 +170,8 @@ if(Admin::isAdmin())
 			</div>
 			
 			<iframe name="frame1" style="display: none; width: 98%; border: 1px dashed #0e0e0e; height: 400px;">1</iframe>
-			<div class="row">
-				<div class="cell">
+			<div class="t-row">
+				<div class="t-cell">
 					<!--Футер-->
 					<div id="footer">
 						<div class="inner">

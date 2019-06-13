@@ -24,6 +24,8 @@ class CatalogController extends MainController{
         //$CONTENT->setTitle('ПаНКи');
         $CONTENT->setTitle('Каталог');
 
+        $_GLOBALS['activePageIds'] = [27];
+
         $info = Page::get(27);  //  каталог
         $MODEL['title'] = $info->attrs['name'];
 
@@ -47,6 +49,8 @@ class CatalogController extends MainController{
     {
         require(GLOBAL_VARS_SCRIPT_FILE_PATH);
         Startup::execute(Startup::FRONTEND);
+
+        $_GLOBALS['activePageIds'] = [27];
 
         $MODEL['item'] = Page::get($CORE->params[0]);
         $MODEL['item']->initMedia();

@@ -36,8 +36,29 @@ class Mail
 		
 		return mail($this->to, $this->subject, $body, $header);
 	}
-	
-	
+
+
+
+
+
+    function сontactFormMsg($arr)
+    {
+        if($arr)
+        {
+            ob_start();
+            ?>
+            Имя: <b><?=$arr['name']?></b><br>
+            Телефон: <b><?=$arr['phone']?></b><br>
+            Email: <b><?=$arr['email']?></b><br>
+            <hr>
+            <?=$arr['message']?>
+            <hr>
+            <?php
+            $ret = ob_get_clean();
+        }
+        return $ret;
+    }
+
 	
 	
 	

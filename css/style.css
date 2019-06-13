@@ -1125,7 +1125,7 @@ a[href*=mailto] {
     align-items: center;
     -ms-flex-pack: center;
     justify-content: center;
-    min-height: 310px;
+    min-height: 180px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .17);
     transition: all .3s ease
 }
@@ -1135,7 +1135,7 @@ a[href*=mailto] {
 }
 
 .box-contacts-icon {
-    font-size: 60px;
+    font-size: 30px;
     line-height: 1;
     color: #976f55
 }
@@ -4629,8 +4629,15 @@ input:-webkit-autofill~.form-validation {
 }
 
 .form-wrap {
-    position: relative
+    position: relative;
+    border: 1px solid #fff;
+    transition: all .3s;
 }
+
+.slonne-required-label{color: #f5543f; font-size: .7em;  display: none; position: absolute; right: 5px; top: 5px; letter-spacing: 0px;}
+.slonne-hasError{border-color: #f5543f;  transition: all .3s; }
+.slonne-hasError .slonne-required-label{display: block; transition: all 1s;}
+.slonne-info-error{color: #f5543f;}
 
 .form-wrap.has-error .form-input {
     border-color: #f5543f

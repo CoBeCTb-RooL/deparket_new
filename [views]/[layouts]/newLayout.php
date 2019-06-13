@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/style.css" id="main-styles-link">
+    <script type="text/javascript" src="/js/libs/jquery-1.11.0.min.js"></script>
+<!--    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>-->
+    <script type="text/javascript" src="/js/slonne.forms2.js"></script>
+
+
     <!--[if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="/images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <script src="/js/html5shiv.min.js"></script>
@@ -65,7 +70,7 @@
                                 <!-- RD Navbar Nav-->
                                 <ul class="rd-navbar-nav">
                                 <?foreach ($_GLOBALS['MENU'] as $item):?>
-                                    <li class="rd-nav-item" ><a class="rd-nav-link" href="<?=$item->url() ?> "><?=$item->attrs['name']?></a>
+                                    <li class="rd-nav-item <?=in_array($item->id, $_GLOBALS['activePageIds']) ? 'active' : ''?>" ><a class="rd-nav-link" href="<?=$item->url() ?> "><?=$item->attrs['name']?></a>
                                         <!-- RD Navbar Dropdown-->
                                         <?if(count($item->subs)):?>
                                         <ul class="rd-menu rd-navbar-dropdown">
@@ -214,7 +219,7 @@
                     <div class="col-sm-6 col-lg-4 col-xl-3" style="border: 0px solid red; ">
                         <div class="oh-desktop">
                             <div class="wow slideInRight" data-wow-delay="0s">
-                                <div class="footer-brand"><a href="index.html"><img src="/images/logo.png" alt="" width="279" ></a></div>
+                                <div class="footer-brand"><a href="/"><img src="/images/logo.png" alt="" width="279" ></a></div>
                                 <p>Мы являемся ведущим в отрасли поставщиком продукции и услуг для напольных покрытий. Давайте сделаем ваш пол эффектным!</p>
 
 
@@ -224,26 +229,25 @@
                     <div class="col-sm-6 col-lg-4  ">
                         <div class="oh-desktop">
                             <div class="inset-top-18 wow slideInDown" data-wow-delay="0s">
-
                                 <ul class="footer-contacts d-inline-block d-md-block">
                                     <li>
                                         <div class="unit unit-spacing-xs">
                                             <div class="unit-left"><span class="icon fa fa-phone"></span></div>
-                                            <div class="unit-body"><a class="link-phone" href="tel:#">+1 323-913-4688</a></div>
+                                            <div class="unit-body"><a class="link-phone" href="tel:<?=Settings::val('contactsPhone')?>"><?=Settings::val('contactsPhone')?></a></div>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="unit unit-spacing-xs">
                                             <div class="unit-left"><span class="icon fa fa-clock-o"></span></div>
                                             <div class="unit-body">
-                                                <p>Mon-Sat: 07:00AM - 05:00PM</p>
+                                                <p>Пн-Пт, 09:00 - 18:00</p>
                                             </div> 
                                         </div>
                                     </li>
                                     <li>
                                         <div class="unit unit-spacing-xs">
                                             <div class="unit-left"><span class="icon fa fa-location-arrow"></span></div>
-                                            <div class="unit-body"><a class="link-location" href="#">4730 Crystal Springs Dr, Los Angeles, CA 90027</a></div>
+                                            <div class="unit-body"><a class="link-location" href="#"><?=Settings::val('contactsAddress')?></a></div>
                                         </div>
                                     </li>
                                 </ul>
@@ -298,24 +302,14 @@
         </div>
     </footer>
 </div>
-<!-- Global Mailform Output-->
-<div class="snackbars" id="form-output-global"></div>
 <!-- Javascript-->
 <script src="/js/core.min.js"></script>
 <script src="/js/script.js"></script>
 
-<!--LIVEDEMO_00 -->
 
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-7078796-5']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();</script>
 
-</body><!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9FT69');</script><!-- End Google Tag Manager -->
+
+
+</body>
 
 </html>

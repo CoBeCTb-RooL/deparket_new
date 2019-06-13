@@ -41,8 +41,24 @@ class Startup{
 
 		$t = new Timer('Главное меню');
         $_GLOBALS['MENU']=Page::getChildren(1);
-//        vd($_GLOBALS['MENU']);
         $t->stop();
+
+//        $_GLOBALS['activePageIds'] = [];
+//        switch($CORE->controller)
+//        {
+//            case 'contactsController':
+//                $_GLOBALS['activePageIds'][] = 29;
+//                break;
+//            case 'faqController':
+//                $_GLOBALS['activePageIds'][] = 28;
+//                break;
+//            case 'catalogController':
+//                $_GLOBALS['activePageIds'][] = 27;
+//                break;
+//        }
+//        vd($_GLOBALS['MENU']);
+
+
 
 	}
 	
