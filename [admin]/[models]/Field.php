@@ -707,7 +707,7 @@ class Field2
 				{
 					$ret.='------';
 				}
-				$ret.='| ('.$e->id.') '.$e->attrs['name'];
+				$ret.='|  '.$e->attrs['name'].' ('.$e->id.')';
 				$ret.='
 				</option>';
 		}

@@ -188,7 +188,8 @@ class EntityController extends MainController{
 				{
 					$essence->initFields();
 					$e = Entity2::get($essence->code, $id, $type, $lang->code);
-					$e->initMedia();
+                    if($e)
+                        $e->initMedia();
 					$pid = $pid ? $pid : $e->pid;
 					//vd($pid);
 					$model['entity'] = $e;

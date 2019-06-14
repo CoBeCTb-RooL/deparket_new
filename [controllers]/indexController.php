@@ -28,6 +28,8 @@ class IndexController extends MainController{
         $MODEL['slides'] = Page::getChildren(35);
 
         $MODEL['catalog'] = Page::getChildren(27);
+
+        $MODEL['reviews'] = Page::getChildren(45);
 		
 
 		Core::renderView('index/index.php', $MODEL);

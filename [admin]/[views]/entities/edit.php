@@ -91,7 +91,7 @@ if(!$error)
 				<div class="field-wrapper">
 					<span class="label">Расположение: </span>
 					<span class="value pid">
-						<select name="pid">
+						<select name="pid" style="max-width: 500px; ">
 							<option value="0">-КОРЕНЬ-</option>
 							<?=Field2::drawTreeSelect($essence, 0, $self_id = ($type == Entity2::TYPE_ELEMENTS && !$essence->jointFields ? null : $e->id ),  $idToBeSelected=$pid, $level=0, $lang )?>
 						</select>

@@ -87,13 +87,45 @@
                 </div>
             <?$i++; ?>
             <?endforeach?>
-
-
         </div>
     </div>
 
     <div class="button-wrap">
         <a href="/catalog" class="button button-md button-default-outline button-wapasha">Смотреть все наши работы</a>
+    </div>
+</section>
+
+
+
+
+<!-- Testimonials #4-->
+<section class="section section-sm section-last bg-default">
+    <div class="container">
+        <h4 class="title-decoration-lines-content">Отзывы клиентов</h4>
+        <!-- Owl Carousel-->
+        <div class="owl-carousel owl-modern" data-items="1" data-stage-padding="15" data-margin="30" data-dots="true" data-animation-in="fadeIn" data-animation-out="fadeOut" data-autoplay="true">
+
+            <?foreach ($MODEL['reviews'] as $item):?>
+                <!-- Quote Lisa-->
+                <article class="quote-lisa">
+                    <div class="quote-lisa-body"><a class="quote-lisa-figure" href="#"><img class="img-circles" src="<?=Media::img($item->attrs['pic'].'')?>" alt="" width="100" height="100"></a>
+                        <h5 class="quote-lisa-cite"><a href="#" onclick="return false; "><?=$item->attrs['name']?></a></h5>
+                        <div class="quote-lisa-text">
+                            <p class="q"><?=$item->attrs['anons']?></p>
+                        </div>
+
+<!--                        <p class="quote-lisa-status">Клиент</p>-->
+
+                        <div class="quote-lisa-answer" >
+                            <hr>
+                            <p><img src="/images/logo.png" alt="" style="width: 150px; " ></p>
+                            <p class="quote-lisa-status"><?=$item->attrs['descr']?></p>
+                        </div>
+                    </div>
+                </article>
+            <?endforeach;?>
+
+        </div>
     </div>
 </section>
 
