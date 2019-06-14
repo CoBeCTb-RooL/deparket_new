@@ -72,11 +72,12 @@
         </div>
         <div class="row row-30 justify-content-center">
             <?$i=0; ?>
+            <?$slideDirections = ['Up', 'Down', 'Left', 'Right', ];?>
             <?foreach ($MODEL['catalog'] as $key=>$item):?>
                 <div class="col-sm-6 col-lg-<?=$i? 4 : 8 ?>">
                     <div class="oh-desktop">
                         <!-- box Spotlight-->
-                        <article class="box-sportlight box-sportlight-sm wow slideInRight" data-wow-delay=".1s"><a class="box-sportlight-figure" href="/catalog/<?=$item->urlPiece()?>"><img src="<?=Media::img($item->attrs['pic'].'').'&width='.($i ? '370' : '770').'&height=332'?>" ></a>
+                        <article class="box-sportlight box-sportlight-sm wow slideIn<?=$slideDirections[rand(0, 3)]?>"" data-wow-delay=".1s"><a class="box-sportlight-figure" href="/catalog/<?=$item->urlPiece()?>"><img src="<?=Media::img($item->attrs['pic'].'').'&width='.($i ? '370' : '770').'&height=332'?>" ></a>
                             <div class="box-sportlight-caption">
                                 <h5 class="box-sportlight-title"><a href="/catalog/<?=$item->urlPiece()?>"><?=$item->attrs['name']?></a></h5>
                                 <div class="box-sportlight-arrow"></div>
