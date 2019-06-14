@@ -118,7 +118,7 @@
 
                         <div class="quote-lisa-answer" >
                             <hr>
-                            <p><img src="/images/logo.png" alt="" style="width: 150px; " ></p>
+                            <p><img src="/images/logo.png" alt="" style="width: 150px; margin-top: 15px; " ></p>
                             <p class="quote-lisa-status"><?=$item->attrs['descr']?></p>
                         </div>
                     </div>
