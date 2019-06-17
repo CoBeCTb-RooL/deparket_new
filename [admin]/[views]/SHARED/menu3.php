@@ -100,7 +100,7 @@ elseif(strpos($uri, '/'.ADMIN_URL_SIGN) === 0)
 <div class="top-menu-wrapper">
 	<div id="menu">
 		<ul class="primary">
-			<li><a class="<?=$section=='index' ? 'active' : ''?>" href="/<?=ADMIN_URL_SIGN?>/"><i class="fa fa-pagelines"></i> Главная</a></li>
+<!--			<li><a class="--><?//=$section=='index' ? 'active' : ''?><!--" href="/--><?//=ADMIN_URL_SIGN?><!--/"><i class="fa fa-pagelines"></i> Главная</a></li>-->
             <li><a  class="<?=$section =='pages' ? 'active' : ''?>" href="/<?=ADMIN_URL_SIGN?>/entity/showList/pages/"><i class="fa fa-sitemap"></i> Разделы</a></li>
 
 <!--            <li><a  class="--><?//=$section =='faq' ? 'active' : ''?><!--" href="/--><?//=ADMIN_URL_SIGN?><!--/entity/showList/faq/"><i class="fa fa-question-circle" aria-hidden="true"></i> Вопрос-ответ</a></li>-->
@@ -118,7 +118,7 @@ elseif(strpos($uri, '/'.ADMIN_URL_SIGN) === 0)
 
 			
 			<?php 
-			if($ADMIN->hasRole(Role::SUPER_ADMIN | Role::SYSTEM_ADMINISTRATOR | Role::ADMIN_GROUPS_MODERATOR | Role::ADMINS_MODERATOR) )
+			if($ADMIN->hasRole(Role::SUPER_ADMIN /*| Role::SYSTEM_ADMINISTRATOR | Role::ADMIN_GROUPS_MODERATOR | Role::ADMINS_MODERATOR*/) )
 			{?>
 			<li>
 				<a class="<?=$section=='system' ? 'active' : ''?>" href="#"><i class="fa fa-cubes"></i> Системные</a>
