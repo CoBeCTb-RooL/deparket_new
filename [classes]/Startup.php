@@ -43,6 +43,34 @@ class Startup{
         $_GLOBALS['MENU']=Page::getChildren(1);
         $t->stop();
 
+
+        #   инфа в окошке справа
+        $_GLOBALS['textOnRight'] = Page::get(48);
+        $_GLOBALS['textOnRight']->initMedia();
+
+
+        #   социалка
+        $_GLOBALS['social'] = [];
+        if(Settings::val('instagram'))
+            $_GLOBALS['social'][] = [
+                'title'=>'Мы в Instagram',
+                'href'=>Settings::val('instagram'),
+                'icon'=>'fa-instagram',
+            ];
+        if(Settings::val('facebook'))
+            $_GLOBALS['social'][] = [
+                'title'=>'Мы в FaceBook',
+                'href'=>Settings::val('facebook'),
+                'icon'=>'fa-facebook',
+            ];
+        if(Settings::val('vk'))
+            $_GLOBALS['social'][] = [
+                'title'=>'Мы во Вконтакте',
+                'href'=>Settings::val('vk'),
+                'icon'=>'fa-vk',
+            ];
+
+
 //        $_GLOBALS['activePageIds'] = [];
 //        switch($CORE->controller)
 //        {

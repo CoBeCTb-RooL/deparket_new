@@ -73,8 +73,13 @@ elseif(strpos($uri, '/'.ADMIN_URL_SIGN.'/backup') === 0 )
 
 elseif(strpos($uri, '/'.ADMIN_URL_SIGN.'/settings') === 0 )
 {
-	$section = 'system';
-	$subsection = 'settings';
+    $section = 'settings';
+//	$subsection = 'settings';
+}
+
+elseif(strpos($uri, '/'.ADMIN_URL_SIGN.'/entity/showList/pages/') === 0 )
+{
+    $section = 'pages';
 }
 
 
@@ -100,7 +105,17 @@ elseif(strpos($uri, '/'.ADMIN_URL_SIGN) === 0)
 
 <!--            <li><a  class="--><?//=$section =='faq' ? 'active' : ''?><!--" href="/--><?//=ADMIN_URL_SIGN?><!--/entity/showList/faq/"><i class="fa fa-question-circle" aria-hidden="true"></i> Вопрос-ответ</a></li>-->
 
-			
+
+
+            <?php
+            if($ADMIN->hasRole(Role::SYSTEM_ADMINISTRATOR ))
+            {?>
+                <li  ><a class="<?=$section=='settings' ? 'active' : ''?>" href="/<?=ADMIN_URL_SIGN?>/settings/"><i class="fa fa-sliders"></i> Настройки сайта</a></li>
+                <?php
+            }?>
+
+
+
 			
 			<?php 
 			if($ADMIN->hasRole(Role::SUPER_ADMIN | Role::SYSTEM_ADMINISTRATOR | Role::ADMIN_GROUPS_MODERATOR | Role::ADMINS_MODERATOR) )
@@ -137,13 +152,13 @@ elseif(strpos($uri, '/'.ADMIN_URL_SIGN) === 0)
                     }?>
                     <li class="delimiter"><hr /></li>
 					
-					<?php 
+					<?php
 					if($ADMIN->hasRole(Role::SYSTEM_ADMINISTRATOR ))
 					{?>
-					<li class="<?=$subsection=='settings' ? 'active' : ''?>" ><a href="/<?=ADMIN_URL_SIGN?>/settings/"><i class="fa fa-sliders"></i> Настройки сайта</a></li>
+<!--					<li class="--><?//=$subsection=='settings' ? 'active' : ''?><!--" ><a href="/--><?//=ADMIN_URL_SIGN?><!--/settings/"><i class="fa fa-sliders"></i> Настройки сайта</a></li>-->
 					<li class="<?=$subsection=='backup' ? 'active' : ''?>"><a href="/<?=ADMIN_URL_SIGN?>/backup/"><i class="fa fa-database"></i> Бэкап базы</a></li>
                     <li class="delimiter"><hr /></li>
-					<?php 
+					<?php
 					}?>
 
 
