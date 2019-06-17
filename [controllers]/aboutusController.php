@@ -27,6 +27,7 @@ class AboutusController extends MainController{
 
 
         $MODEL['info'] = Page::get(26);
+        $MODEL['info']->initMedia();
         $MODEL['title'] = $MODEL['info']->attrs['name'];
 
         #	крошки
