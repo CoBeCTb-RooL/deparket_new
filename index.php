@@ -16,7 +16,7 @@ $globalTimer = new Timer('ГЛОБАЛЬНЫЙ ТАЙМЕР', Timer::TYPE_GLOBAL
 
 
 
-$url = $_SERVER['PATH_INFO'];
+$url = $_SERVER['REQUEST_URI'];
 
 
 

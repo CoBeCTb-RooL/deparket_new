@@ -264,9 +264,23 @@ class Admin
 	}*/
 	
 	
-	function hasRole($role)
+	function hasRole($roles)
 	{
-		return ($this->group->role & $role) ? true : false;
+	    $ret = false;
+        if(gettype($roles)!='array')
+            $roles = [$roles];
+
+
+        foreach ($roles as $r){
+            if($this->group->role & $r)
+                $ret = true;
+        }
+
+        return $ret;
+
+//		return ($this->group->role & $role) ? true : false;
+
+
 	}
 	
 	

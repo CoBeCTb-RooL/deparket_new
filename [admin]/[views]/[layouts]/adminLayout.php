@@ -147,21 +147,20 @@ if(Admin::isAdmin())
 {
 	Core::renderPartial(SHARED_VIEWS_DIR.'/adminTools/adminPanel.php', $model=null, $buffer=false, $ignoreIsAdminka=true);
 }
+
+
 ?>
 	<div class="container1">
 	
 		<div class="table1 full-width full-height">
 			
-			<? //Core::renderPartial(SHARED_VIEWS_DIR.'/menu2.php', $tmp = array('menu'=>$GLOBALS['MENU2']));?>
-			<? Core::renderPartial(SHARED_VIEWS_DIR.'/menu3.php', $tmp = array('menu'=>$GLOBALS['MENU2']));?>
-			
-			<!--<div class="t-row">
-				<div class="tblcell"><? Core::renderPartial(SHARED_VIEWS_DIR.'/menu.php', $tmp = array('menu'=>$GLOBALS['MENU'], 'class'=>"menu"));?></div>	
-			</div>-->
+			<? //Core::renderPartial(SHARED_VIEWS_DIR.'/menu3.php', $tmp = array('menu'=>$GLOBALS['MENU2']));?>
+			<? Core::renderPartial(SHARED_VIEWS_DIR.'/menu4.php');?>
+
+
 			
 			<div class="t-row">
 				<div class="t-cell full-height">
-					<? //Core::renderPartial(SHARED_VIEWS_DIR.'/menu.php', $tmp = array('menu'=>$GLOBALS['MENU'], 'class'=>"leftMenu"));?>
 
 					<div class="content" style=" border: 0px solid red; padding: 0; margin: 10px;  " >
 						<?=$CONTENT->content?>

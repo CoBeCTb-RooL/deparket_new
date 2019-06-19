@@ -72,7 +72,7 @@
                                 <?foreach ($_GLOBALS['MENU'] as $item):?>
                                     <li class="rd-nav-item <?=in_array($item->id, $_GLOBALS['activePageIds']) ? 'active' : ''?>" ><a class="rd-nav-link" href="<?=$item->url() ?> "><?=$item->attrs['name']?></a>
                                         <!-- RD Navbar Dropdown-->
-                                        <?if(count($item->subs)):?>
+                                        <?if(count($item->subs) && $item->id!=28/*faq*/):?>
                                         <ul class="rd-menu rd-navbar-dropdown">
                                             <?foreach ($item->subs as $sub):?>
                                             <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="<?=$item->id==27 ? '/catalog/'.$sub->urlPiece() : $sub->url()?>"><?=$sub->attrs['name']?></a></li>

@@ -29,7 +29,7 @@ class FaqController extends MainController{
 		$info = Page::get(40);
         $MODEL['title'] = $info->attrs['name'];
 
-        $MODEL['faq'] = Page::getChildren(40);
+        $MODEL['faq'] = Page::getChildren(28);
 
 
         #	крошки
