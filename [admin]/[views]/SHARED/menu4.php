@@ -1,5 +1,5 @@
 <?php
-$uri = $_SERVER['PATH_INFO'];
+$uri = $_SERVER['REQUEST_URI'];
 
 
 
