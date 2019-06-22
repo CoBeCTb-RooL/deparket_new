@@ -49,8 +49,8 @@ class Field2
 					
 	#	дефолтовые значения для длин и размеров полей
 	static $defaultFieldsPresets=array(
-									'smalltext'=>array('size'=>"240", ),
-									'text'=>array('width'=>"250", "height"=>"60", ),
+									'smalltext'=>array('size'=>"440", ),
+									'text'=>array('width'=>"440", "height"=>"60", ),
 	
 									//'select'=>array('options'=>"выбор 1\nвыбор 2\nвыбор 3\n", ),
 								);				

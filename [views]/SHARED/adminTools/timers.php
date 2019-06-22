@@ -11,13 +11,13 @@ foreach($timers as $key=>$t)
 
 
 <style>
-#timers .col{display: table-cell; text-align: left; vertical-align: top;}
-#timers .col.num{min-width: 27px; padding: 0 7px 0 0 ;  }
-#timers .col.time{font-weight: bold; padding: 0 0 0 1px; vertical-align: top; width: 80px !important;  }
-#timers .col.memory{padding: 0 0 0 1px; vertical-align: top; width: 80px !important;  }
-#timers .col.time.alert{font-weight: bold; color: red; }
-#timers .col.type{ vertical-align: top; width: 70px !important;  }
-#timers .col.title{ vertical-align: top; }
+#timers .col1{display: table-cell; text-align: left; vertical-align: top;}
+#timers .col1.num{min-width: 27px; padding: 0 7px 0 0 ;  }
+#timers .col1.time{font-weight: bold; padding: 0 0 0 1px; vertical-align: top; width: 80px !important;  }
+#timers .col1.memory{padding: 0 0 0 1px; vertical-align: top; width: 80px !important;  }
+#timers .col1.time.alert{font-weight: bold; color: red; }
+#timers .col1.type{ vertical-align: top; width: 70px !important;  }
+#timers .col1.title{ vertical-align: top; }
 
 .timer-type-<?=Timer::TYPE_QUERY?> .title{}
 .timer-type-<?=Timer::TYPE_CUSTOM?> .title{color: orange; font-weight: bold;  }
@@ -46,11 +46,11 @@ foreach($timers as $key=>$t)
 			
 			?>
 			<div class="item timer-type-<?=$t->type?>">
-				<span class="col num"><?=$key+1?>) </span>
-				<span class="col time <?=$t->time > 1 ? "alert" : ""?>"><?=$t->time?> с.</span>
-				<span class="col memory"> &asymp;<?=Funx::getFileSizeOkon($t->memory)?> </span>
-				<span class="col type">| <?=$t->type?> </span>
-				<span class="col title">| &nbsp;&nbsp;&nbsp;<?=$t->title?></span> 
+				<span class="col1 num"><?=$key+1?>) </span>
+				<span class="col1 time <?=$t->time > 1 ? "alert" : ""?>"><?=$t->time?> с.</span>
+				<span class="col1 memory"> &asymp;<?=Funx::getFileSizeOkon($t->memory)?> </span>
+				<span class="col1 type">| <?=$t->type?> </span>
+				<span class="col1 title">| &nbsp;&nbsp;&nbsp;<?=$t->title?></span>
 			</div>
 		<?php 	
 		}?>
@@ -58,9 +58,9 @@ foreach($timers as $key=>$t)
 			----------------------------------------------------------------------------------------------------------------------------------------------<br>
 			
 			<div class="item ">
-				<span class="col num"> </span>
-				<span class="col time <?=$t->time > 1 ? "alert" : ""?>"><?=$queriesTimeSum?> с.</span>
-				<span class="col title">СУММАРНОЕ ВРЕМЯ ЗАПРОСОВ</span> 
+				<span class="col1 num"> </span>
+				<span class="col1 time <?=$t->time > 1 ? "alert" : ""?>"><?=$queriesTimeSum?> с.</span>
+				<span class="col1 title">СУММАРНОЕ ВРЕМЯ ЗАПРОСОВ</span>
 			</div>
 			----------------------------------------------------------------------------------------------------------------------------------------------<br>
 			
