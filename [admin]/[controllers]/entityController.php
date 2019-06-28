@@ -432,7 +432,7 @@ class EntityController extends MainController{
 				);	
 		//vd($e);
 		//vd($result); 
-		echo '<script>window.top.Slonne.Entities.editComplete('.json_encode($result).')</script>';	
+		echo '<script>window.top.Slonne.Entities.editComplete('.json_encode($result).')</script>';
 		return;
 		
 	}

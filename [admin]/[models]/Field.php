@@ -950,13 +950,34 @@ class Field2
 			$ext=strtolower(substr($file['name'],  $dot+1));
 			
 			$tmpFile = $file["tmp_name"];
+
+
+
 			if(is_uploaded_file($tmpFile))
 			{
 				$allowedExts = array();
 				switch($type)
 				{
-					case 'pic': 
-						break;
+					case 'pic':
+//                        vd($tmpFile);
+//                        vd(getimagesize($tmpFile));
+//                        vd($type);
+                        $image = new ImageResize($tmpFile);
+                        $image->quality_jpg = 100;
+                        $image->quality_png = 1;
+                        $size = getimagesize($tmpFile);
+                        if($size[0] > 1600)
+                        {
+                            $image->resizeToWidth(1600);
+                            $image->save($tmpFile);
+                        }
+                        elseif($size[1] > 1500){
+                            $image->resizeToHeight(1500);
+                            $image->save($tmpFile);
+                        }
+
+
+                        break;
 				}
 				$destDir = ROOT.'/'.UPLOAD_IMAGES_REL_DIR.''.$this->essence->code.'/';
 				mkdir($destDir);
