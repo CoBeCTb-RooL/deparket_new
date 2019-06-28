@@ -966,9 +966,9 @@ class Field2
                         $image->quality_jpg = 100;
                         $image->quality_png = 1;
                         $size = getimagesize($tmpFile);
-                        if($size[0] > 1600)
+                        if($size[0] > 2000)
                         {
-                            $image->resizeToWidth(1600);
+                            $image->resizeToWidth(2000);
                             $image->save($tmpFile);
                         }
                         elseif($size[1] > 1500){
