@@ -388,9 +388,11 @@ class Field2
 					//vd($value);
 					if($value)
 					{
+                        $mediaInfo = FileHelper::info(ROOT.'/'.UPLOAD_IMAGES_REL_DIR.''.$value);
 						$str = '
 						<div class="pic-wrap single" >
-							<div class="src">'.$value.'</div>		
+							<div class="src"><a href="'.'/'.UPLOAD_IMAGES_REL_DIR.''.$value.'" target="_blank">'.$value.'</a></div>
+							<div class="src" style=" font-size: .6em; ">'.$mediaInfo['ratioStr'].' <b>('.$mediaInfo['sizeStr'].')</b></div>	
 							<a href="/'.UPLOAD_IMAGES_REL_DIR.''.$value.'" onclick="return hs.expand(this)" class="highslide ">
 								<img src="'.Media::img($value.'&height=220').'">
 							</a>
@@ -405,11 +407,13 @@ class Field2
 					//vd($value);
 					foreach($value as $key=>$m)
 					{
+					    $mediaInfo = $m->info();
 						$str.='
 						<div class="pic-wrap" id="pic-wrap-'.$m->id.'">
 							<div class="id">id: <b>'.$m->id.'</b></div>
-							<div class="src">'.$m->path.'</div>		
-							<a href="/'.UPLOAD_IMAGES_REL_DIR.''.$m->path.'" onclick="return hs.expand(this)" class="highslide ">
+							<div class="src"><a href="'.$m->path().'" target="_blank">'.$m->path.'</a></div>	
+							<div class="src" style=" font-size: .6em; ">'.$mediaInfo['ratioStr'].' <b>('.$mediaInfo['sizeStr'].')</b></div>	
+							<a href="'.$m->path().'" onclick="return hs.expand(this)" class="highslide ">
 								<img src="'.Media::img($m->path.'&height=100').'" style="width: 100%; ">
 							</a>
 							<div class="title">'.$m->title[$lang].'</div>
@@ -565,13 +569,7 @@ class Field2
 					
 				break;
 				
-				
-				
-				
-				
-				
-				
-				
+
 				
 			case 'select':
 				//vd($fieldInfo);
@@ -589,10 +587,7 @@ class Field2
 				break;
 				
 
-				
-				
-				
-				
+
 			case "date":
 					$str.='
 					<input type="text" name="'.$this->code.'" id="'.$this->code.'" value="'.$value.'"  style="width:70px"> <img id="'.$this->code.'-calendar-btn" src="/js/calendar/calendar.jpg" style="border:0px;">
@@ -608,10 +603,7 @@ class Field2
 						});
 				</script>';
 				break;	
-				
-				
-				
-				
+
 				
 				
 			case 'checkbox':
@@ -628,11 +620,11 @@ class Field2
 					//vd($value);
 					if($value)
 					{
+                        $mediaInfo = FileHelper::info(ROOT.'/'.UPLOAD_IMAGES_REL_DIR.''.$value);
 						$str.='
-						
-						
 						<div class="pic-wrap single" id="pic-'.$this->code.'-div" >
-							<!--<div class="src">'.$value.'</div>-->		
+						<div class="src"><a href="'.'/'.UPLOAD_IMAGES_REL_DIR.''.$value.'" target="_blank">'.$value.'</a></div>
+						<div class="src" style=" font-size: .6em; ">'.$mediaInfo['ratioStr'].' <b>('.$mediaInfo['sizeStr'].')</b></div>	
 							<a href="/'.UPLOAD_IMAGES_REL_DIR.''.$value.'" onclick="return hs.expand(this)" class="highslide ">
 								<img src="'.Media::img($value.'&height=120').'">
 							</a>
@@ -644,12 +636,14 @@ class Field2
 				{
 					foreach($value as $key=>$m)
 					{
+                        $mediaInfo = $m->info();
 						$str.='
 						<div class="pic-wrap" id="multipic-'.$m->id.'" >	
 							<img class="delete" src="/'.ADMIN_DIR.'/img/delete.png" onclick="Slonne.Entities.deleteMedia('.$m->id.')" alt="удалить" title="удалить">
 							<div class="delete-loading">загрузка..</div>
 							<div class="id">id: <b>'.$m->id.'</b></div>
-							<div class="src">'.$m->path.'</div>
+							<div class="src"><a href="'.$m->path().'" target="_blank">'.$m->path.'</a></div>	
+							<div class="src" style=" font-size: .6em; ">'.$mediaInfo['ratioStr'].' <b>('.$mediaInfo['sizeStr'].')</b></div>	
 							<a href="/'.UPLOAD_IMAGES_REL_DIR.''.$m->path.'" onclick="return hs.expand(this)" class="highslide ">
 								<img src="'.Media::img($m->path.'&height=100').'" style="width: 100%; ">
 							</a>
@@ -951,24 +945,24 @@ class Field2
 			
 			$tmpFile = $file["tmp_name"];
 
-
-
 			if(is_uploaded_file($tmpFile))
 			{
 				$allowedExts = array();
+				vd($type);
 				switch($type)
 				{
 					case 'pic':
 //                        vd($tmpFile);
 //                        vd(getimagesize($tmpFile));
 //                        vd($type);
+
                         $image = new ImageResize($tmpFile);
                         $image->quality_jpg = 100;
                         $image->quality_png = 1;
                         $size = getimagesize($tmpFile);
-                        if($size[0] > 2000)
+                        if($size[0] > 1700)
                         {
-                            $image->resizeToWidth(2000);
+                            $image->resizeToWidth(1700);
                             $image->save($tmpFile);
                         }
                         elseif($size[1] > 1500){

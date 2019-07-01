@@ -362,10 +362,10 @@ class EntityController extends MainController{
 								if($field->type == 'pic' && $field->multiple)
 								{
 									$field->initEssence($e->essence);
-									
 									foreach($_FILES[$field->code] as $key2=>$file)
 									{
-										$saveFileResult = $field->saveUploadedMediaItem($file, $token = Field2::generateMediaName());
+										$saveFileResult = $field->saveUploadedMediaItem($file, $token = Field2::generateMediaName(), $field->type);
+//										vd($saveFileResult);
 										if(!$saveFileResult['problem'])
 										{
 											$path = $e->essence->code.'/'.$saveFileResult['newFileName'];
@@ -391,9 +391,21 @@ class EntityController extends MainController{
 							{
 								
 								$m = Media::get($key);
-								//vd($m);
+//								echo '<hr><hr><hr><hr>';
+//								vd($m);
+                                if($m)
+                                {
 								$m->title[$lang->code] = strPrepare($val);
 								$m->update();
+                                }
+                                else
+                                    {
+                                        echo '<hr><hr><hr><hr>';
+                                        vd($m);
+                                        vd($key);
+                                        vd($val);
+                                        vd($_REQUEST['media']);
+                                    }
 								//vd($m);
 							}
 						}

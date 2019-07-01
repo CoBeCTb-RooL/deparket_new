@@ -13,6 +13,8 @@ class Media{
 		, $path
 		, $title
 		, $titleJson;
+
+	private $_info;
 		
 	
 	
@@ -38,7 +40,42 @@ class Media{
 		
 		return $res;
 	}
-	
+
+
+
+	function path($prefix)
+    {
+        return $prefix.'/'.UPLOAD_IMAGES_REL_DIR.''.$this->path;
+    }
+
+    function pathAbs()
+    {
+        return $this->path($_SERVER['DOCUMENT_ROOT']);
+    }
+
+
+
+    function info()
+    {
+        if(!$this->_info)
+        {
+//            $tmp = getimagesize($this->pathAbs());
+//            $ret['w'] = $tmp[0];
+//            $ret['h'] = $tmp[1];
+//            $ret['ratioStr'] = $tmp[0].' &times; '.$tmp[1];
+//            $ret['mime'] = $tmp['mime'];
+//            $a = filesize($this->pathAbs());
+//            $ret['size'] = $a;
+//            $ret['sizeStr'] = ' ≈'.Funx::getFileSizeOkon($a);
+            $ret = FileHelper::info($this->pathAbs());
+        }
+        else
+            $ret = $this->_info;
+
+        $this->_info = $ret;
+//        vd($ret);
+        return $ret;
+    }
 	
 	
 	
