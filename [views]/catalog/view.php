@@ -14,18 +14,18 @@ $item = $MODEL['item'];
 
 
 <!-- Single-project-->
-<section class="section section-sm section-first bg-default">
-    <div class="container">
-        <div class="row row-50 justify-content-center align-items-xl-center">
-            <div class="col-md-10 col-lg-4 ">
-                <div class="offset-right-xl-15">
+<section class="section section-sm section-first bg-default align-top">
+    <div class="container align-top">
+        <div class="row row-50 justify-content-center  align-top">
+            <div class="col-md-10 col-lg-4 align-top">
+                <div class="offset-right-xl-15 align-top">
                     <!-- Owl Carousel-->
                     <div class="owl-carousel owl-dots-white" data-items="1" data-dots="true" data-autoplay="true" data-animation-in="fadeIn" data-animation-out="fadeOut">
                         <img src="<?=Media::img($item->attrs['pic'].'').'&width=655&height=496'?>" alt="" width="655" height="496">
                     </div>
                 </div>
             </div>
-            <div class="col-md-10 col-lg-8 ">
+            <div class="col-md-10 col-lg-8 align-top">
                 <div class="single-project">
                     <h4><?=$item->attrs['name']?></h4>
                     <p class="text-gray-500 " ><?=$item->attrs['descr']?></p>
