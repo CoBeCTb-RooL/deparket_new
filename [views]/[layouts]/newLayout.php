@@ -192,7 +192,7 @@
                         <div class="oh-desktop">
                             <div class="wow slideInRight" data-wow-delay="0s">
                                 <div class="footer-brand"><a href="/"><img src="/images/logo.png" alt="" width="279" ></a></div>
-                                <p>Мы являемся ведущим в отрасли поставщиком продукции и услуг для напольных покрытий. Давайте сделаем ваш пол эффектным!</p>
+                                <?=$_GLOBALS['footerText']->attrs['descr']?>
 
 
                             </div>

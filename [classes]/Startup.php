@@ -44,6 +44,9 @@ class Startup{
         $t->stop();
 
 
+        $_GLOBALS['footerText']=Page::get(57);
+
+
         #   инфа в окошке справа
         $_GLOBALS['textOnRight'] = Page::get(48);
         $_GLOBALS['textOnRight']->initMedia();
